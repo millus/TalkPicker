@@ -15,8 +15,7 @@ body {
   padding: 10px;
 }
 
-.wishlist {
-
+.wish-container {
   padding: 10px 30px;
   border-radius: 6px;
   margin-bottom: 3%;
@@ -46,15 +45,22 @@ body {
   font-weight: 400;
 }
 
+/*
+* Program
+*/
 .program {
   border: 1px solid white;
-  border-collapse: collapse;
   background-color: #fff;
   width: 100%;
+  border-radius: 6px;
 }
 
 thead {
   display: none;
+}
+
+tbody{
+  vertical-align: top; 
 }
 
 .location {
@@ -106,7 +112,7 @@ thead {
 * Responsive
 */
 @media screen and (min-width: 600px) {
-  .row{
+  .row {
     display: table-row;
     border: 2px solid #ff6400;
   }
@@ -133,7 +139,8 @@ thead {
     border: 2px solid #ff6400;
   }
 
-  .program{
+  .program {
     width: 100%;
+    border-collapse: collapse;
   }
 }

@@ -1,24 +1,29 @@
 const program = document.querySelector('.program');
 const wishes = document.querySelectorAll('.wish');
+let talkTime = '';
+let rowElement = '';
 program.addEventListener('click', addTalk);
 
 function addTalk (evt) {
   const elementClicked = evt.target;
   let talkName = '';
-  let talkTime = '';
   let talkRoom = '';
   let talkPicked = '';
   if(elementClicked.classList.contains('talk') || elementClicked.classList.contains('talk-name')) {
     if(elementClicked.classList.contains('talk')) {
+      rowElement = elementClicked.parentElement;
       talkName = elementClicked.querySelector('.talk-name').textContent;
-      talkTime = elementClicked.parentElement.classList.item(1);
+      talkTime = rowElement.classList.item(1);
       talkRoom = elementClicked.classList.item(1);
-      elementClicked.classList.toggle('talk-selected');
+      deselectAllTalksInThatRow (rowElement);
+      elementClicked.classList.add('talk-selected');
     } else {
+      rowElement = elementClicked.parentElement.parentElement;
       talkName = elementClicked.textContent;
-      talkTime = elementClicked.parentElement.parentElement.classList.item(1);
+      talkTime = rowElement.classList.item(1);
       talkRoom = elementClicked.parentElement.classList.item(1);
-      elementClicked.parentElement.classList.toggle('talk-selected');
+      deselectAllTalksInThatRow (rowElement);
+      elementClicked.parentElement.classList.add('talk-selected');
     }
 
     switch (talkRoom) {
@@ -60,5 +65,12 @@ function addTalk (evt) {
         console.log('No talk found.');
     }
 
+  }
+}
+
+function deselectAllTalksInThatRow (rowElement) {
+  const talks = rowElement.children;
+  for(const talk of talks) {
+    talk.classList.remove('talk-selected');
   }
 }
