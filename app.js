@@ -3,13 +3,7 @@ const wishes = document.querySelector('.wish-container-back');
 const wishList = document.querySelectorAll('.wish');
 let talkTime = '';
 let rowElement = '';
-window.addEventListener('scroll', function fixedPosWishes(evt) {
-  if(window.scrollY > 135) {
-    wishes.classList.add('fixed-pos');
-  } else {
-    wishes.classList.remove('fixed-pos');
-  }
-});
+window.addEventListener('scroll', fixedPosWishes);
 program.addEventListener('click', addTalk);
 
 function addTalk (evt) {
@@ -80,5 +74,13 @@ function deselectAllTalksInThatRow (rowElement) {
   const talks = rowElement.children;
   for(const talk of talks) {
     talk.classList.remove('talk-selected');
+  }
+}
+
+function fixedPosWishes(evt) {
+  if(window.scrollY > 135) {
+    wishes.classList.add('fixed-pos');
+  } else {
+    wishes.classList.remove('fixed-pos');
   }
 }

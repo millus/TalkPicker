@@ -16,6 +16,9 @@ body {
   width: 100%;
 }
 
+/*
+* Wishes (my plan)
+*/
 .wish-container-back {
   margin: 0;
   padding: 10px;
@@ -156,5 +159,9 @@ tbody{
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
+  }
+
+  .wish-container-back {
+    padding: 0;
   }
 }
