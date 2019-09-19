@@ -13,12 +13,12 @@ function addTalk (evt) {
       talkName = elementClicked.querySelector('.talk-name').textContent;
       talkTime = elementClicked.parentElement.classList.item(1);
       talkRoom = elementClicked.classList.item(1);
-      elementClicked.parentElement.classList.toggle('.talk-selected');
+      elementClicked.parentElement.classList.toggle('talk-selected');
     } else {
       talkName = elementClicked.textContent;
       talkTime = elementClicked.parentElement.parentElement.classList.item(1);
       talkRoom = elementClicked.parentElement.classList.item(1);
-      elementClicked.parentElement.parentElement.classList.toggle('.talk-selected');
+      elementClicked.parentElement.parentElement.classList.toggle('talk-selected');
     }
 
     switch (talkRoom) {
