@@ -34,9 +34,9 @@ body {
 }
 
 .wishes-header {
-  font-size: 1em;
-  text-transform: uppercase;
-  font-weight: 400;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 5px;
 }
 
 .wishes {
