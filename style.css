@@ -23,10 +23,11 @@ body {
   margin: 0;
   padding: 10px;
   background-color: #efefef;
+  width: 100%;
 }
 
 .wish-container {
-  padding: 10px 30px;
+  padding: 20px;
   border-radius: 6px;
   margin-bottom: 3%;
   background-color: #fff;
@@ -51,8 +52,9 @@ body {
 
 .talk-pick {
   font-size: 1em;
-  margin-left: 10px;
   font-weight: 400;
+  width: 100%;
+  display: inline-block;
 }
 
 .fixed-pos {
@@ -168,5 +170,11 @@ tbody{
 
   .wish-container-back {
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .fixed-pos {
+    width: 95%;
   }
 }
