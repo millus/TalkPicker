@@ -171,9 +171,3 @@ tbody{
     padding: 0;
   }
 }
-
-@media screen and (min-width: 500px) and (max-width: 683px) {
-  .fixed-pos {
-    width: 95%;
-  }
-}
