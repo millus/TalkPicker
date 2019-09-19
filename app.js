@@ -1,7 +1,15 @@
 const program = document.querySelector('.program');
-const wishes = document.querySelectorAll('.wish');
+const wishes = document.querySelector('.wish-container-back');
+const wishList = document.querySelectorAll('.wish');
 let talkTime = '';
 let rowElement = '';
+window.addEventListener('scroll', function fixedPosWishes(evt) {
+  if(window.scrollY > 135) {
+    wishes.classList.add('fixed-pos');
+  } else {
+    wishes.classList.remove('fixed-pos');
+  }
+});
 program.addEventListener('click', addTalk);
 
 function addTalk (evt) {
@@ -46,20 +54,20 @@ function addTalk (evt) {
         console.log('No room found.')
     }
 
-    talkPicked = `(${talkRoom}) - <i>${talkName}</i>`;
+    talkPicked = `${talkName} (${talkRoom})`;
 
     switch (talkTime) {
       case "talks1":
-        wishes.item(0).firstElementChild.innerHTML = talkPicked;
+        wishList.item(0).firstElementChild.innerHTML = talkPicked;
         break;
       case 'talks2':
-        wishes.item(1).firstElementChild.innerHTML = talkPicked;
+        wishList.item(1).firstElementChild.innerHTML = talkPicked;
         break;
       case 'talks3':
-        wishes.item(2).firstElementChild.innerHTML = talkPicked;
+        wishList.item(2).firstElementChild.innerHTML = talkPicked;
         break;
       case 'talks4':
-        wishes.item(3).firstElementChild.innerHTML = talkPicked;
+        wishList.item(3).firstElementChild.innerHTML = talkPicked;
         break;
       default:
         console.log('No talk found.');
