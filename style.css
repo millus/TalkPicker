@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-weight: 400;
   font-family: 'IBM Plex Serif', serif;
@@ -42,10 +46,15 @@ body {
   font-weight: 400;
 }
 
-table {
+.program {
   border: 1px solid white;
   border-collapse: collapse;
   background-color: #fff;
+  width: 100%;
+}
+
+thead {
+  display: none;
 }
 
 .location {
@@ -56,13 +65,21 @@ table {
 
 .col,
 .row {
-  border: 2px solid #ff6400;
-  max-width: 120px;
   padding: 10px;
+  display: block;
+}
+
+.row {
+  display: block;
+  width: 100%;
 }
 
 .talk {
   cursor: pointer;
+  border: 2px solid #ff6400;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 6px;
 }
 
 .talk:hover {
@@ -74,10 +91,49 @@ table {
 }
 
 .time {
+  font-weight: 600;
+  font-size: 1.5em;
 }
 
 .talk-name {
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 2px;
+  margin-top: 0;
+}
+
+/*
+* Responsive
+*/
+@media screen and (min-width: 600px) {
+  .row{
+    display: table-row;
+    border: 2px solid #ff6400;
+  }
+
+  .col {
+    display: table-cell;
+  }
+
+  .talk {
+    max-width: 120px;
+    padding: 10px;
+  }
+
+  .time {
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  .location {
+    border: 2px solid #ff6400;
+  }
+
+  .program{
+    width: 100%;
+  }
 }
