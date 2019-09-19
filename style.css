@@ -23,7 +23,6 @@ body {
   margin: 0;
   padding: 10px;
   background-color: #efefef;
-  width: 100%;
 }
 
 .wish-container {
@@ -59,7 +58,7 @@ body {
 
 .fixed-pos {
   position: fixed;
-  width: 90%;
+  width: 92%;
   top: 0.1px;
   -webkit-box-shadow: 0px 6px 8px 0px rgba(220,220,220,0.5);
 }
