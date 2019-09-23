@@ -84,7 +84,7 @@ function deselectAllTalksInThatRow (rowElement) {
 }
 
 function fixedPosWishes(evt) {
-  if(window.scrollY > 110) {
+  if(window.scrollY > 110 && window.innerWidth < 683) {
     wishes.classList.add('fixed-pos');
     program.classList.add('push-down');
   } else {
